@@ -36,3 +36,12 @@ footer {
 nav span {
 	margin: 0px 10px 0px 0px;
 }
+
+#left_col {
+   float:left;
+
+}
+#right_col {
+   float:right;
+   padding-right: 10px;
+}
