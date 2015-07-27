@@ -9,13 +9,13 @@ exports.index = function (req, res) {
 };
 
 exports.show = function (req, res, next) {
-	models.Quiz.findOne(req.params.quizId).then(function (quiz) {
+	models.Quiz.findById(req.params.quizId).then(function (quiz) {
 		res.render('quizes/show', {quiz: quiz});
 	});
 };
 
 exports.answer = function (req, res, next) {
-	models.Quiz.findOne(req.params.quizId).then(function (quiz) {
+	models.Quiz.findById(req.params.quizId).then(function (quiz) {
 		if (req.query.answer === quiz.answer) {
 			res.render('quizes/answer', {quiz: quiz, answer: 'Correcto'});
 		} else {
