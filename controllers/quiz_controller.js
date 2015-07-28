@@ -13,7 +13,7 @@ exports.load = function (req, res, next, quizId) {
 };
 
 exports.index = function (req, res) {
-	var param = "%";
+	var param = "%"; 
 
 	if (req.query.search) {
 		param += req.query.search.replace(" ", '%');
