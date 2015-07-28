@@ -16,6 +16,8 @@ router.get('/quizes', quizController.index);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 
+
+
 router.get('/author', function (req, res, next) {
 	res.render('author.ejs', {author: "Jorge Rodriguez Martin"});
 });
