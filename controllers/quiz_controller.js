@@ -2,7 +2,7 @@
 var models = require('../models/models.js');
 
 exports.load = function (req, res, next, quizId) {
-	models.Quiz.findOne(Number(quizId)).then(function (quiz) {
+	models.Quiz.findById(Number(quizId)).then(function (quiz) {
 		if (quiz) {
 			req.quiz = quiz;
 			next();
@@ -25,7 +25,7 @@ exports.index = function (req, res, next) {
 };
 
 exports.show = function (req, res) {
-	models.Quiz.findOne(req.params.quizId).then(function (quiz) {
+	models.Quiz.findById(req.params.quizId).then(function (quiz) {
 		res.render('quizes/show', {quiz: req.quiz, errors: []});
 	});
 };
